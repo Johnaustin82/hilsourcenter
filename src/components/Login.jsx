@@ -1,36 +1,37 @@
-import { useState } from 'react';
-import { Eye, EyeOff, Mail, Lock, User, Sparkles } from 'lucide-react';
+import { useState } from "react";
+import { Eye, EyeOff, Mail, Lock, User, Sparkles } from "lucide-react";
+
 
 export default function LoginSignupPage() {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
+    console.log("Form submitted:", formData);
   };
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
     setFormData({
-      name: '',
-      email: '',
-      password: '',
-      confirmPassword: ''
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
     });
     setShowPassword(false);
     setShowConfirmPassword(false);
@@ -55,10 +56,12 @@ export default function LoginSignupPage() {
               <Sparkles className="w-8 h-8 text-blue-900" />
             </div>
             <h1 className="text-3xl font-bold text-white mb-2">
-              {isLogin ? 'Welcome Back' : 'Create Account'}
+              {isLogin ? "Welcome Back" : "Create Account"}
             </h1>
             <p className="text-blue-100">
-              {isLogin ? 'Sign in to continue your journey' : 'Join us and start your adventure'}
+              {isLogin
+                ? "Sign in to continue your journey"
+                : "Join us and start your adventure"}
             </p>
           </div>
 
@@ -117,7 +120,11 @@ export default function LoginSignupPage() {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center text-blue-200 hover:text-yellow-400 transition-colors duration-200"
               >
-                {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                {showPassword ? (
+                  <EyeOff className="h-5 w-5" />
+                ) : (
+                  <Eye className="h-5 w-5" />
+                )}
               </button>
             </div>
 
@@ -141,7 +148,11 @@ export default function LoginSignupPage() {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-blue-200 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                  {showConfirmPassword ? (
+                    <EyeOff className="h-5 w-5" />
+                  ) : (
+                    <Eye className="h-5 w-5" />
+                  )}
                 </button>
               </div>
             )}
@@ -164,7 +175,7 @@ export default function LoginSignupPage() {
               onClick={handleSubmit}
               className="w-full bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 py-3 px-4 rounded-xl font-semibold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-200 transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-blue-800"
             >
-              {isLogin ? 'Sign In' : 'Create Account'}
+              {isLogin ? "Sign In" : "Create Account"}
             </button>
           </div>
 
@@ -183,7 +194,7 @@ export default function LoginSignupPage() {
               </div>
               Continue with Google
             </button>
-            
+
             <button className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white py-3 px-4 rounded-xl font-medium hover:bg-white/20 transition-all duration-200 flex items-center justify-center gap-3">
               <div className="w-5 h-5 bg-blue-600 rounded flex items-center justify-center">
                 <span className="text-xs font-bold text-white">f</span>
@@ -201,7 +212,7 @@ export default function LoginSignupPage() {
                 onClick={toggleForm}
                 className="ml-2 text-yellow-400 hover:text-yellow-300 font-semibold transition-colors duration-200"
               >
-                {isLogin ? 'Sign Up' : 'Sign In'}
+                {isLogin ? "Sign Up" : "Sign In"}
               </button>
             </p>
           </div>

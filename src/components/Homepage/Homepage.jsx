@@ -8,6 +8,7 @@ import {
   X,
   AlertCircle,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,7 +17,13 @@ const Homepage = () => {
   const [toDate, setToDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
+  function handleClick() {
+    navigate("/login");
+  }
+
+  
   const rfqData = [
     {
       id: 101,
@@ -238,7 +245,9 @@ const Homepage = () => {
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span>
                   </a>
                 ))}
-                <button className="bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg">
+                <button className="bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg"
+                onClick={handleClick}
+                >
                   Login / Sign Up
                 </button>
               </div>
