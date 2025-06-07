@@ -206,8 +206,6 @@ const Homepage = () => {
     "Buyer Dashboard",
     "Supplier Portal",
     "Supplier Database",
-    "Pricing Guide",
-    "Help Center",
   ];
 
   return (
@@ -235,7 +233,7 @@ const Homepage = () => {
               } md:block absolute md:relative top-full md:top-auto left-0 right-0 md:left-auto md:right-auto bg-blue-900 md:bg-transparent p-4 md:p-0`}
             >
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
-                {["Home", "Group Buying", "Contact", "About Us"].map((item) => (
+                {["Home", "Contact", "About Us"].map((item) => (
                   <a
                     key={item}
                     href="#"
