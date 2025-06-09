@@ -206,8 +206,7 @@ const Homepage = () => {
     "Buyer Dashboard",
     "Supplier Portal",
     "Supplier Database",
-    "Pricing Guide",
-    "Help Center",
+    
   ];
 
   return (
