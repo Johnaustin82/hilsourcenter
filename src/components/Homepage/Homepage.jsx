@@ -23,7 +23,11 @@ const Homepage = () => {
     navigate("/login");
   }
 
-  
+  // Navigate to RFQ submission page
+  const handleSubmitRFQ = () => {
+    navigate("/submit"); // Adjust the path as necessary
+
+  }
   const rfqData = [
     {
       id: 101,
@@ -267,6 +271,7 @@ const Homepage = () => {
                     key={link}
                     href="#"
                     className="bg-blue-900 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-blue-800 hover:-translate-y-1 transition-all duration-300 shadow-md"
+                    onClick={link === "Submit RFQ" ? handleSubmitRFQ : null}
                   >
                     {link}
                   </a>
@@ -432,7 +437,7 @@ const Homepage = () => {
                     </div>
 
                     {rfq.status === "Open" ? (
-                      <button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 py-3 rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg">
+                      <button  onClick={handleSubmitRFQ} className="w-full bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 py-3 rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg">
                         Submit Quote
                       </button>
                     ) : (

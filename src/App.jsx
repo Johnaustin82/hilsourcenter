@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage'
 import LoginSignupPage from './components/Login'
+import RfqSubmissionPage from './components/Homepage/SubmitRfq'; 
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/login' element={<LoginSignupPage/>}/>
+          <Route path="/submit" element={<RfqSubmissionPage />} />
         </Routes>
       </Router>
 
