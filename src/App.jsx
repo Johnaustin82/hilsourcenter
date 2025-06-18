@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage'
 import LoginSignupPage from './components/Login'
 import RfqSubmissionPage from './components/Homepage/SubmitRfq'; 
+import BuyerDashboard from './components/Homepage/BuyerDashboard';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Homepage/>}/>
           <Route path='/login' element={<LoginSignupPage/>}/>
           <Route path="/submit" element={<RfqSubmissionPage />} />
+          <Route path='/buyer' element={<BuyerDashboard/>} />
         </Routes>
       </Router>
 
