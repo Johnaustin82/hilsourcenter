@@ -23,6 +23,14 @@ const Homepage = () => {
     navigate("/login");
   }
 
+  // Navigate to RFQ submission page
+  const handleSubmitRFQ = () => {
+    navigate("/submit"); // Adjust the path as necessary
+  } 
+  const handleBuyerDashboard = () =>{
+    navigate("/buyer")
+  }  
+
   
   const rfqData = [
     {
@@ -205,7 +213,8 @@ const Homepage = () => {
     "Submit RFQ",
     "Buyer Dashboard",
     "Supplier Portal",
-    "Supplier Database",
+    
+    
   ];
 
   return (
@@ -261,15 +270,27 @@ const Homepage = () => {
           <aside className="lg:w-72">
             <div className="bg-white rounded-2xl shadow-lg p-5">
               <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
-                {sidebarLinks.map((link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    className="bg-blue-900 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-blue-800 hover:-translate-y-1 transition-all duration-300 shadow-md"
-                  >
+              {sidebarLinks.map((link) => (
+                       <a
+                       key={link}
+                      
+                      className="bg-blue-900 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-blue-800 hover:-translate-y-1 transition-all duration-300 shadow-md"
+                      onClick={() => {
+                     if (link === "Submit RFQ") {
+                      handleSubmitRFQ();
+                      } else if (link === "Buyer Dashboard") {
+                     handleBuyerDashboard();
+                     }
+                      }}
+                      >
                     {link}
-                  </a>
-                ))}
+                   </a>
+                      ))}
+
+
+
+
+                   
               </div>
             </div>
           </aside>
@@ -431,7 +452,7 @@ const Homepage = () => {
                     </div>
 
                     {rfq.status === "Open" ? (
-                      <button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 py-3 rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg">
+                      <button  onClick={handleSubmitRFQ} className="w-full bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 py-3 rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg">
                         Submit Quote
                       </button>
                     ) : (
